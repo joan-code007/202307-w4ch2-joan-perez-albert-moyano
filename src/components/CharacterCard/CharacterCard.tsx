@@ -1,12 +1,12 @@
 import { Character } from "../../types";
 
-interface CharacterCardProps {
+interface CharacterCard {
   characterInfo: Character;
 }
 
 const CharacterCard = ({
-  characterInfo: { name, pictureUrl, height, mass, created },
-}: CharacterCardProps): React.ReactElement => {
+  characterInfo: { name, height, pictureUrl, mass, created },
+}: CharacterCard): React.ReactElement => {
   return (
     <article className="card-container">
       <img className="card__image" src={pictureUrl} alt={name} />
