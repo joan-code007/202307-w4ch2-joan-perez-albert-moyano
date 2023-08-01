@@ -1,22 +1,20 @@
 import { Character } from "../../types";
-
-interface CharacterCardProps {
+import "./CharacterCard.css";
+interface CharacterCard {
   characterInfo: Character;
 }
 
 const CharacterCard = ({
-  characterInfo: { name, pictureUrl, height, mass, created },
-}: CharacterCardProps): React.ReactElement => {
+  characterInfo: { name, height, pictureUrl, mass, created },
+}: CharacterCard): React.ReactElement => {
   return (
     <article className="card-container">
-      <img className="card__image" src={pictureUrl} alt={name} />
       <div className="card__info">
+        <img className="card__image" src={pictureUrl} alt={name} />
         <h2 className="card__name">{name}</h2>
-        <ul>
-          <li>{height}</li>
-          <li>{mass}</li>
-          <li>{created}</li>
-        </ul>
+        <span>{height}</span>
+        <span>{mass}</span>
+        <span>{created}</span>
       </div>
     </article>
   );
