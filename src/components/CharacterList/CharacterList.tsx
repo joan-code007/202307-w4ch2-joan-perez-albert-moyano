@@ -7,6 +7,12 @@ const CharacterCardList = (): React.ReactElement => {
       <li className="character-list__characters">
         <CharacterCard characterInfo={characterData[0]} />
       </li>
+      <li className="character-list__characters">
+        <CharacterCard characterInfo={characterData[1]} />
+      </li>
+      <li className="character-list__characters">
+        <CharacterCard characterInfo={characterData[2]} />
+      </li>
     </ul>
   );
 };
