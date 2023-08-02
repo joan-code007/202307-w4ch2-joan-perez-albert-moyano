@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  min-height: 100vh;
   padding: 30px;
 }
 
@@ -20,6 +19,11 @@ img {
   max-height: 100%;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+}
+
 .card-container {
   border: 2px solid rgb(42, 41, 41);
   width: 250px;
@@ -33,8 +37,7 @@ img {
 .character-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 100%;
+  gap: 30px;
 }
 
 .card__info {
@@ -42,9 +45,9 @@ img {
   padding: 10px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 840px) {
   .character-list {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
