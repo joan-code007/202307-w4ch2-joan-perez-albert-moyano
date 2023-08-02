@@ -1,10 +1,18 @@
 ## Components
 
-- App
+- App:
+  - state: actions for buttons (increment mass, decrement mass, reset height)
 - CharacterCard
-- CardList
+  - props: charactersData (see below);
+- Button  
+  - props: text button, action while it is being clicked
 
 # Data
+- text button
+- action on click button: 
+  - increment mass
+  - decrement mass
+  - reset height 
 
 - charactersData[]
   - name: string
