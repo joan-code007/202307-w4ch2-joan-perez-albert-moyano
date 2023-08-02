@@ -9,6 +9,9 @@ const CharacterCard = ({
 }: CharacterCard): React.ReactElement => {
   pictureUrl = `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`;
 
+  let rawDate = created;
+  rawDate = rawDate.slice(0, 10);
+
   return (
     <article className="card-container">
       <div className="card__info">
@@ -17,7 +20,7 @@ const CharacterCard = ({
         <div>
           <span>{height}cm </span>
           <span>{mass}kg </span>
-          <span>{created}</span>
+          <span>{rawDate}</span>
         </div>
       </div>
     </article>

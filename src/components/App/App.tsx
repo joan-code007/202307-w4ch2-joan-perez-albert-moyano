@@ -21,12 +21,11 @@ const App = () => {
   return (
     <div className="container">
       <ul className="character-list">
-        {characters.length > 0 &&
-          characters.map((character: Character) => (
-            <li key={character.id}>
-              <CharacterCard characterInfo={character} />
-            </li>
-          ))}
+        {characters.map((character: Character) => (
+          <li key={character.id}>
+            <CharacterCard characterInfo={character} />
+          </li>
+        ))}
       </ul>
     </div>
   );
