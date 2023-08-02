@@ -5,16 +5,23 @@ interface CharacterCard {
 }
 
 const CharacterCard = ({
-  characterInfo: { name, height, pictureUrl, mass, created },
+  characterInfo: { id, name, height, pictureUrl, mass, created },
 }: CharacterCard): React.ReactElement => {
+  pictureUrl = `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`;
+
+  let rawDate = created;
+  rawDate = rawDate.slice(0, 10);
+
   return (
     <article className="card-container">
       <div className="card__info">
         <img className="card__image" src={pictureUrl} alt={name} />
         <h2 className="card__name">{name}</h2>
-        <span>{height}</span>
-        <span>{mass}</span>
-        <span>{created}</span>
+        <div>
+          <span>{height}cm </span>
+          <span>{mass}kg </span>
+          <span>{rawDate}</span>
+        </div>
       </div>
     </article>
   );
