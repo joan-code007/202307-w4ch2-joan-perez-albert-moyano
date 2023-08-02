@@ -11,7 +11,7 @@ const CharacterCard = ({characterInfo:{id, name, height, mass, created}}: Charac
   const textButtonIncrement = "+ mass";
   const textButtonDecrement = "- mass";
   const [massCharacter, setMassCharacter] = useState(Number(mass));
-  const [heightCharacter, setHeightCharacter] = useState(Number(height));
+  const [heightCharacter] = useState(Number(height));
   const apiUrl = import.meta.env.VITE_API_STARWARS_URL;
 
   const incrementMass = async () => {
