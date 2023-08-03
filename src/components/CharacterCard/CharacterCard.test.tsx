@@ -8,7 +8,6 @@ const character: Character = {
   height: "",
   mass: "",
   created: "",
-  pictureUrl: "",
 };
 
 describe("Given a CharacterCard component", () => {

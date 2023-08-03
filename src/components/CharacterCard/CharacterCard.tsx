@@ -6,7 +6,7 @@ interface CharacterCard {
   characterInfo: Character;
 }
 
-const CharacterCard = ({characterInfo:{id, name, height, mass, created}}: CharacterCard): React.ReactElement => {
+const CharacterCard = ({ characterInfo: { id, name, height, mass, created } }: CharacterCard): React.ReactElement => {
 
   const textButtonIncrement = "+ mass";
   const textButtonDecrement = "- mass";
@@ -15,35 +15,35 @@ const CharacterCard = ({characterInfo:{id, name, height, mass, created}}: Charac
   const apiUrl = import.meta.env.VITE_API_STARWARS_URL;
 
   const incrementMass = async () => {
-    const response = await fetch(`${apiUrl}/${id}`,{
+    const response = await fetch(`${apiUrl}/${id}`, {
       method: "PATCH",
       body: JSON.stringify({
-        mass: `${Number(massCharacter)+1}`,
+        mass: `${Number(massCharacter) + 1}`,
       }),
-    headers: {
-    "Content-type": "application/json",
-    }
+      headers: {
+        "Content-type": "application/json",
+      }
     });
     if (response.ok) {
-      setMassCharacter(massCharacter+1);
+      setMassCharacter(massCharacter + 1);
     }
   }
 
   const decrementMass = async () => {
-    if (massCharacter > 0)  {
-      const response = await fetch(`${apiUrl}${id}`,{
+    if (massCharacter > 0) {
+      const response = await fetch(`${apiUrl}/${id}`, {
         method: "PATCH",
         body: JSON.stringify({
-        mass: `${Number(massCharacter)-1}`,
-      }),
-      headers: {
-      "Content-type": "application/json",
+          mass: `${Number(massCharacter) - 1}`,
+        }),
+        headers: {
+          "Content-type": "application/json",
+        }
+      });
+      if (response.ok) {
+        setMassCharacter(massCharacter - 1);
+      }
     }
-    });
-    if (response.ok) {
-      setMassCharacter(massCharacter-1);
-    }
-  }
   }
   const pictureUrl = `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`;
 
@@ -59,9 +59,9 @@ const CharacterCard = ({characterInfo:{id, name, height, mass, created}}: Charac
         <div className="card__info">
           <span>{heightCharacter}cm </span>
           <div className="mass-manipulation">
-            <Button actionOnClick={()=>decrementMass()} textButton={textButtonDecrement}/>
+            <Button actionOnClick={() => decrementMass()} textButton={textButtonDecrement} />
             <span>{massCharacter}kg </span>
-            <Button actionOnClick={()=>incrementMass()} textButton={textButtonIncrement}/>
+            <Button actionOnClick={() => incrementMass()} textButton={textButtonIncrement} />
           </div>
           <span>{rawDate}</span>
         </div>
